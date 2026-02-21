@@ -61,8 +61,13 @@ sources:
     schema: PUBLIC
     tables:
       - name: PURCHASE_SRC
-  - name: XYZ # you define any name
+  - name: XYZ # you can define any name but usually you should define a name that is revelant to your model where you are referrign this source
     database: DBT_DB
     schema: PUBLIC
     tables:
       - name: BASE_ORDERS
+  - name: patient # you define any name
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: PATIENT_SRC

@@ -18,4 +18,4 @@ with BASE_ORDERS as
 )
 select * from BASE_ORDERS
 
--- Notes: Since it is an Ephemeral model it will not get created on the database so we create another model called 'final_orders' and get the reference of ephemeral model 'clean_orders' to 'final_orders'
+-- Notes: Since it is an Ephemeral model it will not get created on the database so we create another model(Materialized = 'table') called 'final_orders' and get the reference of ephemeral model 'clean_orders' to 'final_orders'
