@@ -32,6 +32,10 @@ models:
     description: "DBT Model for the sales incremental type 'table' "
   - name: session
     description: "DBT Model session "
+  - name: macro_concat_address
+    description: "DBT Model concat_address "
+  - name: macro_concat_name
+    description: "DBT Model concat_name "
 sources:
   - name: employee # name - Some name you are defining for this source
     database: DBT_DB
