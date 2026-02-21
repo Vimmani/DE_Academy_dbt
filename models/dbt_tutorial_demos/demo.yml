@@ -30,6 +30,8 @@ models:
     description: "DBT Model for the sales incremental type 'ephemeral' "
   - name: final_orders
     description: "DBT Model for the sales incremental type 'table' "
+  - name: session
+    description: "DBT Model session "
 sources:
   - name: employee # name - Some name you are defining for this source
     database: DBT_DB
@@ -71,3 +73,8 @@ sources:
     schema: PUBLIC
     tables:
       - name: PATIENT_SRC
+  - name: session 
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: SESSION_SRC
