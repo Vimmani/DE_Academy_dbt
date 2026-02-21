@@ -20,14 +20,18 @@ models:
     description: "DBT Model for the customer table"
   - name: customer_vw
     description: "DBT Model for the customer View"
-  - name : sales
+  - name: sales
     description: "DBT Model for the sales incremental type 'append' table"
-  - name: product 
+  - name: product
     description: "DBT Model for the sales incremental type 'delete_Insert' table"
   - name: purchase
     description: "DBT Model for the sales incremental type 'merge' table"
+  - name: clean_orders
+    description: "DBT Model for the sales incremental type 'ephemeral' "
+  - name: final_orders
+    description: "DBT Model for the sales incremental type 'table' "
 sources:
-  - name: employee
+  - name: employee # name - Some name you are defining for this source
     database: DBT_DB
     schema: PUBLIC
     tables:
@@ -42,18 +46,23 @@ sources:
   #   schema: PUBLIC
   #   tables:
   #     - name: customer
-  - name: sales 
+  - name: sales
     database: DBT_DB
     schema: PUBLIC
     tables:
       - name: SALES_SRC
-  - name: product 
+  - name: product
     database: DBT_DB
     schema: PUBLIC
     tables:
       - name: PRODUCT_SRC
-  - name: purchase 
+  - name: purchase
     database: DBT_DB
     schema: PUBLIC
     tables:
       - name: PURCHASE_SRC
+  - name: XYZ # you define any name
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: BASE_ORDERS
