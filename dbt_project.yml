@@ -60,4 +60,12 @@ models:
       mart:
         +database: PROJECT2_DB
         +schema: MART
+    dbt_labs_JaffleShop:
+      marts:
+        +database: RAW
+        +schema: JAFFLE_SHOP
+      staging:
+        +database: RAW
+        +schema: JAFFLE_SHOP
+      
         
