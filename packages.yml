@@ -1,0 +1,4 @@
+packages:
+# below is the configuration for codgen package please refer https://hub.getdbt.com/dbt-labs/codegen/latest/ for more details
+  - package: dbt-labs/codegen
+    version: 0.14.0
