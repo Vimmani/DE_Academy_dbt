@@ -1,0 +1,10 @@
+macros:
+  - name: cents_to_dollars
+    description: This macro take column with cents amount and conver it to dollar and round it to 2 decimal by default
+    arguments:
+      - name: column_name
+        type: string
+        description: This column provid the cents value to the macro to conver it to dollar
+      - name: decimals
+        type: string
+        description: This indicates to how many decimals the dollar amount should be rounded off by default it is 2
