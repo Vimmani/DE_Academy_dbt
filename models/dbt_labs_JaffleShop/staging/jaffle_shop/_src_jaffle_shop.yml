@@ -5,6 +5,11 @@ sources:
     tables:
       - name: ORDERS
       - name: CUSTOMERS
+        columns:
+          - name: id
+            data_tests:
+              - unique
+              - not_null
         config:
         # This freshness configuration monitor the data in the specified field in 'loaded_at_field' according to the conditions given in 'warn_after' and 'error_After' with intervals given in 'periods'
         # ex: below config gives warning if '_etl_loaded_at' field has data older than 6 hours and gives error if daata not loaded or older than 24 hours
