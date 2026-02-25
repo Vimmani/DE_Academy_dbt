@@ -2,6 +2,7 @@ sources:
   - name: jaffle_shop
     database: RAW
     schema: JAFFLE_SHOP
+    description: A clone of a snowflake application database
     tables:
       - name: ORDERS
       - name: CUSTOMERS
