@@ -1,3 +1,11 @@
 packages:
   - package: dbt-labs/codegen
     version: 0.14.0
+  - package: dbt-labs/dbt_utils
+    version: 1.3.3
+  # you can refer a package using its git hub repositry https url as belwo but instead of version you use revision and specify the branch you want to use
+  #- package: https://github.com/dbt-labs/dbt-utils.git
+  # revision: main
+
+  # you can use the package that is there in your project sub directories
+  #- local: sub_project
