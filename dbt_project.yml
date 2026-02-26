@@ -35,6 +35,8 @@ clean-targets: # directories to be removed by `dbt clean`
 
 models:
   dbt_tutorial:
+    snowflake_spend:
+      +enabled: true
     project1:
       bronze:
         +database: PROJECT1_DB
@@ -58,3 +60,4 @@ models:
         +database: RAW
         +schema: JAFFLE_SHOP
         +materialized: view
+

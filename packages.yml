@@ -9,3 +9,5 @@ packages:
 
   # you can use the package that is there in your project sub directories
   #- local: sub_project
+  - package: gitlabhq/snowflake_spend
+    version: 1.4.0
