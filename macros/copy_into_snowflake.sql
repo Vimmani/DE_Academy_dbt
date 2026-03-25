@@ -1,0 +1,1 @@
+-- This is the macro code that snowflake will be utilising to perform copy into command to transfer data from S3

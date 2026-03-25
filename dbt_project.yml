@@ -60,4 +60,7 @@ models:
         +database: RAW
         +schema: JAFFLE_SHOP
         +materialized: view
+    DBT_AWSGlue_Snowflake_Project:
+        +database: AWSGLUEDB
+        +schema: PUBLIC
 

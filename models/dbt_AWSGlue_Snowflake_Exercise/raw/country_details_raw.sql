@@ -1,0 +1,1 @@
+-- this is the table to accomodate the data coming from S3 bucket to snowflake table 'country_details_raw' as raw data
