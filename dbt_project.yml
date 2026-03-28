@@ -65,8 +65,13 @@ models:
         +database: RAW
         +schema: JAFFLE_SHOP
         +materialized: view
-    # DBT_AWSGlue_Snowflake_Project:
-    #   raw:
-    #     +database: AWSGLUEDB
-    #     +schema: RAW
+    dbt_AWS_SCD2_Snoflake_Exercise:
+      silver:
+        +database: SCD2_DB
+        +schema: silver
+        +materialized: table
+      gold:
+        +database: SCD2_DB
+        +schema: gold
+        +materialized: view
 
