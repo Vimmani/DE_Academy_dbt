@@ -1,0 +1,15 @@
+
+version: 2
+# This is generated using Codegen package
+sources:
+  - name: jaffle_shop
+    database: raw
+    tables:
+      - name: customers
+      - name: dim_customers
+      - name: fct_orders
+      - name: orders
+      - name: stg_jaffle_shop__customers
+      - name: stg_jaffle_shop__orders
+      - name: stg_jaffle_shop_orders
+      - name: stg_stripe__payments
