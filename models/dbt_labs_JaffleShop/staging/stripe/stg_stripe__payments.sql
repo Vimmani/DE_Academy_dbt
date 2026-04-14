@@ -5,7 +5,8 @@ select
     status,
 
     -- amount is stored in cents, convert it to dollars
-    amount / 100 as amount,
+    -- refering macro for this conversion
+    {{ cents_to_dollars('amount') }} as amount,
     created as created_at
 
 --from RAW.STRIPE.PAYMENT
