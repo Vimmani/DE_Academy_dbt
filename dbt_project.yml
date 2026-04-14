@@ -27,6 +27,11 @@ vars:
    target_db: AWSGLUEDB
    target_schema: PUBLIC
    stage_name: AWSGLUEDB.PUBLIC.DBT_GLUE_STAGE
+   wrk_schema: BRONZE
+   file_format_json: SCD2_DB.BRONZE.MY_CSV_FORMAT
+   purge_status: FALSE
+   stg_name: SCD2_DB.BRONZE.SCD2_STAGE 
+   rawhist_db: SCD2_DB
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
@@ -65,8 +70,13 @@ models:
         +database: RAW
         +schema: JAFFLE_SHOP
         +materialized: view
-    # DBT_AWSGlue_Snowflake_Project:
-    #   raw:
-    #     +database: AWSGLUEDB
-    #     +schema: RAW
+    dbt_AWS_SCD2_Snoflake_Exercise:
+      silver:
+        +database: SCD2_DB
+        +schema: silver
+        +materialized: table
+      gold:
+        +database: SCD2_DB
+        +schema: gold
+        +materialized: view
 

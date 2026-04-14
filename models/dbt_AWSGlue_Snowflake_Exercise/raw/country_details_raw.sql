@@ -11,7 +11,6 @@ config
 "schema": 'RAW'
 
 })
-
 }}
 
  
