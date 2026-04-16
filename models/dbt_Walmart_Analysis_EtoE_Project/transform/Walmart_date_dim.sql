@@ -8,16 +8,18 @@
     )
 }}
 
+With store_date_Data as (
 Select 
-   {{ dbt_utils.generate_surrogate_key(['STORE_ID', 'DEPT_ID', 'DATE'])}} as DATE_ID,
+   DATE_ID,
    DATE,
    ISHOLIDAY,
    DATE AS INSERT_DATE,
-   current_timestamp AS UPDATE_DATE
+   current_timestamp() AS UPDATE_DATE
 From {{ ref('department_clean_raw') }}
+)
+
+Select * from store_date_Data
 
 {% if is_incremental() %}
- 
-   Where INSERT_DATE >= (Select MAX(UPDATE_DATE)::date from {{ this }}))
-
+   Where INSERT_DATE >= (Select MAX(UPDATE_DATE) from {{ this }})
 {% endif%}

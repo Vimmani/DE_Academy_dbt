@@ -10,7 +10,7 @@
 
 With joined_store_dept_data as (
     SELECT
-    {{ dbt_utils.generate_surrogate_key(['D.STORE_ID', 'D.DEPT_ID', 'D.DATE']) }} as DATE_ID,
+    D.DATE_ID,
     D.STORE_ID,
     D.DEPT_ID,
     S.STORE_TYPE,
@@ -26,7 +26,7 @@ SELECT * FROM joined_store_dept_data
 
 {% if is_incremental() %}
  -- Here we are assuming that date coming from departemnt is true and not gonna change. IF it changes we need implent the logic that was commented belwo
-  WHERE INSERT_DATE >= (SELECT MAX(UPDATE_DATE)::date FROM {{this}})
+  WHERE INSERT_DATE >= (SELECT MAX(UPDATE_DATE) FROM {{this}})
 {% endif %}
 
 

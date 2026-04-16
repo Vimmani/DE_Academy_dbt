@@ -36,3 +36,14 @@ models:
         tests:
           - not_null
           - unique
+  - name: Walmart_fact_table
+    columns:
+      - name: ISHOLIDAY
+        tests:
+          - not_null
+  - name: Walmart_department_dim
+    columns:
+      - name: DATE
+        tests:
+          - not_null
+          
