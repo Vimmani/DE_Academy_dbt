@@ -2,8 +2,8 @@ version: 2
 
 sources:
   - name: walmart_source
-    database: WALMART_DB              # Optional: override database
-    schema: RAW_DATA            # Optional: override schema
+    database: WALMART_DB # Optional: override database
+    schema: RAW_DATA # Optional: override schema
     tables:
       - name: DEPARTMENT_RAW_DATA
         external:
@@ -22,3 +22,17 @@ sources:
           location: "@WALMART_DB.RAW_DATA.WALMART_S3_STAGE"
           pattern: '(?i).*stores.*\.csv'
           file_format: "(FORMAT_NAME = WALMART_DB.RAW_DATA.MY_CSV_FORMAT)"
+
+models:
+  - name: Walmart_store_dim
+    columns:
+      - name: DATE_ID
+        tests:
+          - not_null
+          - unique
+  - name: Walmart_date_dim
+    columns:
+      - name: DATE_ID
+        tests:
+          - not_null
+          - unique
