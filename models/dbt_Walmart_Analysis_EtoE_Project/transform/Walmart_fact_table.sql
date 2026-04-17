@@ -12,6 +12,7 @@ SELECT
     S.DEPT_ID,
     S.DATE_ID,
     S.STORE_SIZE,
+    S.STORE_TYPE,
     D.WEEKLY_SALES,
     W.DATE,
     W.Isholiday,

@@ -23,6 +23,12 @@ sources:
           pattern: '(?i).*stores.*\.csv'
           file_format: "(FORMAT_NAME = WALMART_DB.RAW_DATA.MY_CSV_FORMAT)"
 
+  - name: walmart_mart_source
+    database: WALMART_DB # Optional: override database
+    schema: TRANSFORM_DATA # Optional: override schema
+    tables:
+        - name: WALMART_FACT_TABLE 
+
 models:
   - name: Walmart_store_dim
     columns:
