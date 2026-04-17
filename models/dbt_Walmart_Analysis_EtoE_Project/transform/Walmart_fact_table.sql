@@ -2,7 +2,7 @@
     config(
         materialized='table',
         database = 'WALMART_DB',
-        schema = 'TRANSFORM_DATA'
+        schema = 'MART_DATA'
     )
 }}
 
