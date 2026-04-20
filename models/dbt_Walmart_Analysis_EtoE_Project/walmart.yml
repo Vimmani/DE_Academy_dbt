@@ -27,29 +27,49 @@ sources:
     database: WALMART_DB # Optional: override database
     schema: MART_DATA # Optional: override schema
     tables:
-        - name: WALMART_FACT_TABLE
+      - name: WALMART_FACT_TABLE
 
 models:
   - name: Walmart_store_dim
     columns:
       - name: DATE_ID
-        tests:
+        data_tests:
           - not_null
           - unique
   - name: Walmart_date_dim
     columns:
       - name: DATE_ID
-        tests:
+        data_tests:
           - not_null
           - unique
   - name: Walmart_fact_table
     columns:
       - name: ISHOLIDAY
-        tests:
+        data_tests:
           - not_null
+      - name: STORE_ID # The column in your fact table
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                field: STORE_ID
+                to: ref('Walmart_store_dim')
+      - name: DEPT_ID # The column in your fact table
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                field: DEPT_ID
+                to: ref('Walmart_store_dim')
+      - name: DATE_ID
+        data_tests:
+          - relationships:
+              arguments:
+                field: DATE_ID
+                to: ref('Walmart_date_dim')
+
   - name: Walmart_department_dim
     columns:
       - name: DATE
         tests:
           - not_null
-          
